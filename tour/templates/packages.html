@@ -1,0 +1,63 @@
+{% extends 'home.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Package Details{% endblock %}</title>
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+{% block content %}
+
+    <section>
+        <div class="container">
+            <div class="row text-center">
+        <section id="services" class="container">
+        <h4>Our Services</h4>
+        <div class="services-grid">
+
+            <div class="service-item">
+                <img src="{% static 'images/tour4.jpg' %}" alt="Tour 4">
+                <h3>Exclusive Tours</h3>
+                <p>Handpicked tours to the best destinations worldwide.</p>
+            </div>
+
+            <div class="service-item">
+                <img src="{% static 'images/tour1.jpg' %}" alt="Tour 1">
+                <h3>Adventure Tours</h3>
+                <p>Experience thrilling adventure tours in the most exotic locations.</p>
+            </div>
+
+            <div class="service-item">
+                <img src="{% static 'images/tour2.jpg' %}" alt="Tour 2">
+                <h3>Beach Holidays</h3>
+                <p>Relax and unwind with our tailored beach holiday packages.</p>
+            </div>
+
+            <div class="service-item">
+                <img src="{% static 'images/tour3.jpg' %}" alt="Tour 3">
+                <h3>Cultural Trips</h3>
+                <p>Explore rich cultures and historical landmarks with guided tours.</p>
+            </div>
+
+            <div class="service-item">
+                <img src="{% static 'images/tour5.jpg' %}" alt="Tour 5">
+                <h3>Affordable Packages</h3>
+                <p>We offer budget-friendly options without compromising on quality.</p>
+            </div>
+
+            <div class="service-item">
+                <img src="{% static 'images/tour6.jpg' %}" alt="Tour 6">
+                <h3>24/7 Support</h3>
+                <p>We’re here for you whenever you need help on your journey.</p>
+            </div>
+        </div>
+        </section>
+        </div>
+        </div>
+    </section>
+{% endblock %}
+</body>
+</html>

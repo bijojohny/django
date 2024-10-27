@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ package.name }}</title>
+</head>
+<body>
+    <h1>{{ package.name }}</h1>
+    <p>Description: {{ package.description }}</p>
+    <p>Duration: {{ package.duration }} days</p>
+    <p>Price: ${{ package.price }}</p>
+
+    <a href="{% url 'book_package' package.id %}">Book This Package</a>
+</body>
+</html>

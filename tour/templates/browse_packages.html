@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Tour Packages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Tour Packages</h1>
+
+    <table>
+    <thead>
+            <tr>
+                <th>Title</th>
+                <th>Destination</th>
+                <th>Price</th>
+                <th>Duration</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for package in packages %}
+            <tr>
+                <td>{{ package.title }}</td>
+                <td>{{ package.destination }}</td>
+                <td>${{ package.price }}</td>
+                <td>{{ package.duration }} days</td>
+                <td>
+                    <a href="{% url 'package_detail' package.id %}">View Details</a> |
+                    <a href="{% url 'book_package' package.id %}">Book Now</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vendor Dashboard</h1>
+    <a href="{% url 'create_package' %}">Create New Package</a>
+    <h2>Your Tour Packages</h2>
+    <table>
+    <thead>
+            <tr>
+                <th>Title</th>
+                <th>Destination</th>
+                <th>Price</th>
+                <th>Duration</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for package in packages %}
+            <tr>
+                <td>{{ package.title }}</td>
+                <td>{{ package.destination }}</td>
+                <td>${{ package.price }}</td>
+                <td>{{ package.duration }} days</td>
+                <td>
+                    {% if package.approved %}
+                Approved
+            {% else %}
+                Pending Approval
+            {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+</body>
+</html>

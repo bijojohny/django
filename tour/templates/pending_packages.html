@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Packages</title>
+</head>
+<body>
+    <h1>Pending Tour Package Approvals</h1>
+    <ul>
+        {% for package in packages %}
+            <li>
+                <h2>{{ package.title }}</h2>
+                <p>Destination: {{ package.destination }}</p>
+                <p>Vendor: {{ package.vendor.username }}</p>
+                <p>Price: ${{ package.price }}</p>
+                <a href="{% url 'approve_package' package.pk %}">Approve</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
