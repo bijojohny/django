@@ -2,6 +2,19 @@
 <html>
 <head>
     <title>Book {{ package.name }}</title>
+<style>
+    body {
+          background-image: url('/static/images/img.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center;
+          color: #ffffff;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          padding: 50px;
+        }
+</style>
 </head>
 <body>
     <h1>Book {{ package.name }}</h1>
@@ -15,6 +28,6 @@
     <button type="submit">Book Now</button>
     </form>
 
-    <a href="{% url 'package_detail' package.id %}">Back to Package Details</a>
+    <a style="color:white;" href="{% url 'package_detail' package.id %}">Back to Package Details</a>
 </body>
 </html>

@@ -31,4 +31,4 @@ from .models import TourPackage
 class TourPackageForm(forms.ModelForm):
     class Meta:
         model = TourPackage
-        fields = ['title', 'destination', 'duration', 'price']  # Fields for package creation
+        fields = ['title', 'destination', 'image', 'duration', 'price']  # Fields for package creation

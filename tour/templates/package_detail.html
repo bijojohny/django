@@ -2,13 +2,32 @@
 <html>
 <head>
     <title>{{ package.name }}</title>
+<style>
+    body {
+          background-image: url('/static/images/img.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center;
+          color: #ffffff;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          padding: 50px;
+        }
+</style>
 </head>
 <body>
-    <h1>{{ package.name }}</h1>
+    <h1>{{ package.title }}</h1>
+    <br>
+{% if package.image %}
+        <img src="{{ package.image.url }}" alt="{{ package.name }}" width="200" height="150">
+    {% else %}
+        <p>No image uploaded for this package.</p>
+    {% endif %}
     <p>Description: {{ package.description }}</p>
     <p>Duration: {{ package.duration }} days</p>
     <p>Price: ${{ package.price }}</p>
 
-    <a href="{% url 'book_package' package.id %}">Book This Package</a>
+    <a style="color:white" href="{% url 'book_package' package.id %}">Book This Package</a>
 </body>
 </html>

@@ -1,4 +1,5 @@
 from datetime import timezone
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -13,6 +14,7 @@ class TourPackage(models.Model):  # Inherits from models.Model
     title = models.CharField(max_length=255)
     destination = models.CharField(max_length=255)
     duration = models.IntegerField()
+    image = models.ImageField(upload_to='static/images/', null=True, blank=True)  # New ImageField
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

@@ -9,7 +9,7 @@ admin.site.register(Booking)
 admin.site.register(Payment)
 
 class TourPackageAdmin(admin.ModelAdmin):
-    list_display = ['title', 'vendor', 'destination', 'price', 'approved']  # Display in the admin list
+    list_display = ['title', 'vendor', 'destination', 'image', 'price', 'approved']
     list_filter = ['approved']  # Add a filter for approved/unapproved packages
     actions = ['approve_packages']  # Custom admin action to approve packages
 

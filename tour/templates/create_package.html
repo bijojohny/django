@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create New Package</title>
+    <title> Create New Package</title>
     <style>
+        body {
+            background-image: url('/static/images/img.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: left;
+            padding: 50px;
+            }
         form {
             width: 400px;
             margin: 0 auto;
@@ -20,9 +31,10 @@
 </head>
 <body>
     <h1>Create a New Tour Package</h1>
-    <form method="post">
+    <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}  <!-- This renders the form fields for title, destination, duration, price -->
+        <br>
         <button type="submit">Create Package</button>
     </form>
 </body>

@@ -6,6 +6,15 @@
     <title>Browser Tour Packages</title>
     <style>
         body {
+            background-image: url('/static/images/img.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
@@ -36,7 +45,7 @@
     <h1>Available Tour Packages</h1>
 
     <table>
-    <thead>
+    <head>
             <tr>
                 <th>Title</th>
                 <th>Destination</th>
@@ -44,7 +53,7 @@
                 <th>Duration</th>
                 <th>Actions</th>
             </tr>
-        </thead>
+        </head>
         <tbody>
             {% for package in packages %}
             <tr>
@@ -53,8 +62,9 @@
                 <td>${{ package.price }}</td>
                 <td>{{ package.duration }} days</td>
                 <td>
-                    <a href="{% url 'package_detail' package.id %}">View Details</a> |
-                    <a href="{% url 'book_package' package.id %}">Book Now</a>
+
+                    <a style="color:white;" href="{% url 'package_detail' package.id %}">View Details</a> |
+                    <a style="color:white;" href="{% url 'book_package' package.id %}">Book Now</a>
                 </td>
             </tr>
             {% endfor %}

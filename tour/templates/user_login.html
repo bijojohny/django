@@ -6,6 +6,15 @@
     <title>User Login</title>
     <style>
         body {
+            background-image: url('/static/images/user.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
@@ -51,6 +60,6 @@
 
         <button type="submit">Login</button>
     </form>
-    <p>Don't have an account? <a href="{% url 'user_registration' %}">Register here</a></p>
+    <p>Don't have an account? <a style="color:white;" href="{% url 'user_registration' %}">Register here</a></p>
 </body>
 </html>

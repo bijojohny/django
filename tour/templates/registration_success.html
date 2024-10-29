@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Successful</title>
+<style>
+    body {
+          background-image: url('/static/images/img.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center;
+          color: #ffffff;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          padding: 50px;
+        }
+</style>
 </head>
 <body>
     <h1>Registration Successful!</h1>
     <p>Thank you for registering.</p>
-    <p><a href="{% url 'home' %}">Go back to Home</a></p>
+    <p><a style="color:white;" href="{% url 'home' %}">Go back to Home</a></p>
 </body>
 </html>

@@ -6,6 +6,15 @@
     <title>Vendor Dashboard</title>
     <style>
         body {
+            background-image: url('/static/images/img.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
@@ -34,7 +43,7 @@
 </head>
 <body>
     <h1>Vendor Dashboard</h1>
-    <a href="{% url 'create_package' %}">Create New Package</a>
+    <a style="color:yellow;" href="{% url 'create_package' %}">Create New Package</a>
     <h2>Your Tour Packages</h2>
     <table>
     <thead>
@@ -43,6 +52,7 @@
                 <th>Destination</th>
                 <th>Price</th>
                 <th>Duration</th>
+                <th>Image</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -53,6 +63,13 @@
                 <td>{{ package.destination }}</td>
                 <td>${{ package.price }}</td>
                 <td>{{ package.duration }} days</td>
+                <td>
+                    {% if package.image %}
+            <img src="{{ package.image.url }}" alt="{{ package.name }}" width="200" height="150">
+        {% else %}
+            <p>No image uploaded for this package.</p>
+        {% endif %}
+                </td>
                 <td>
                     {% if package.approved %}
                 Approved
